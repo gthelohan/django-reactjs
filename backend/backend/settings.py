@@ -27,9 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-ADMIN_LOGIN = 'admin'
-ADMIN_PASSWORD = 'pbkdf2_sha256$30000$Vo0VlMnkR4Bk$qEvtdyZRWTcOsCnI/oQ7fVOu1XAURIZYoOZ3iq8Dr4M='
-
 # Application definition
 
 AUTHENTICATION_BACKENDS = (
@@ -44,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'rest_framework',
+	'trip'
 ]
 
 MIDDLEWARE = [
@@ -87,6 +86,12 @@ DATABASES = {
     }
 }
 
+OAUTH_CONFIG = {
+	'GOOGLE' : {
+		'URL': 'https://openidconnect.googleapis.com/v1/userinfo',
+		'APP_ID': '',
+	}
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

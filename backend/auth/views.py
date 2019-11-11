@@ -10,7 +10,6 @@ def oauth(request):
     user = authenticate(request)
     if user is not None:
         login(request, user)
-        return HttpResponse("ok")
+        return reverse('order')
     else:
         return HttpResponse("veuillez vous identifier")
-
